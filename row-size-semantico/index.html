@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Column size</title>
+
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: [inicio] 1fr [linea2] 1fr [linea3] 1fr [inicio2] 1fr [linea5] 1fr [inicio3] 1fr [linea7] 1fr [fin];
+            grid-template-rows: [inicio] 200px [linea1] 200px [fin];
+            gap: 5px;
+        }
+
+        .item {
+            background: lightblue;
+            padding: 10px;
+            border: 1px solid red;
+        }
+
+        .item:nth-of-type(1) {
+            grid-column: inicio / inicio2;
+            grid-row: inicio / fin;
+        }
+
+        .item:nth-of-type(2) {
+            grid-column: inicio2 / inicio3;
+            grid-row: inicio / fin;
+        }
+
+        .item:nth-of-type(3) {
+            grid-column: inicio3 / fin;
+        }
+    </style>
+
+</head>
+
+<body>
+    <section class="container">
+        <div class="item">item #1</div>
+        <div class="item">item #2</div>
+        <div class="item">item #3</div>
+        <div class="item">item #4</div>
+        <div class="item">item #5</div>
+    </section>
+</body>
+
+</html>
